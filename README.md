@@ -1,1 +1,3 @@
-# read me
+# README
+
+This is my obsidian note repo
