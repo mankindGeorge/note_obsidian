@@ -1,6 +1,6 @@
 # Obsidian 笔记仓库
 
-这是我的 Obsidian 笔记仓库，用于记录学习和开发过程中的知识点。
+This is my obsidian github repo
 
 ## 笔记导航
 
