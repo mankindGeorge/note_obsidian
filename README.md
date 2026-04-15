@@ -25,5 +25,3 @@ This is my obsidian github repo
 ---
 
 > 笔记持续更新中...
-
-[[DB/结构化查询语言SQL]]
