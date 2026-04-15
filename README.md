@@ -10,6 +10,12 @@ This is my obsidian github repo
 |------|------|
 | [Web服务器搭建与网页解析](DataCollection/Web服务器搭建与网页解析.md) | Flask 基础、网页模板、静态资源、表单处理 |
 
+### DB - 数据库
+
+| 笔记 | 描述 |
+|------|------|
+| [结构化查询语言SQL](DB/结构化查询语言SQL.md) | 嵌套查询、EXISTS子查询、集合查询 |
+
 ### OS - 操作系统
 
 | 笔记 | 描述 |
