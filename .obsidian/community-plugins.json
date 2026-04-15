@@ -1,10 +1,7 @@
 [
   "obsidian-git",
-  "obsidian-custom-attachment-location",
-  "copy-inline-code",
-  "easy-typing-obsidian",
-  "templater-obsidian",
-  "open-in-new-tab",
   "obsidian-excalidraw-plugin",
-  "smart-connections"
+  "smart-connections",
+  "templater-obsidian",
+  "open-in-new-tab"
 ]
