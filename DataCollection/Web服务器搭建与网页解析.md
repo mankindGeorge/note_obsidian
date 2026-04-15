@@ -1,5 +1,4 @@
 ## Flask 基础
-
 ### 第一个启动程序
 
 主程序 app.py
@@ -37,7 +36,6 @@ if __name__ == '__main__':
 ---
 
 ## 网页模板
-
 ### 模板文件
 
 templates/hello.html
