@@ -28,10 +28,9 @@ if __name__ == '__main__':
 ```
 
 **参数说明：**
-
-- `debug=True`：开发模式，修改代码自动刷新，**上线关闭**
-- `host='0.0.0.0'`：允许本机/局域网访问
-- `port=5000`：端口号，可自定义 8080、3000 等
+	`debug=True`：开发模式，修改代码自动刷新，**上线关闭**
+	`host='0.0.0.0'`：允许本机/局域网访问
+	`port=5000`：端口号，可自定义 8080、3000 等
 
 ---
 
@@ -106,10 +105,9 @@ if __name__ == '__main__':
 # 用户提交请求
 
 **说明：**
-
-- GET：显示页面
-- POST：接收用户名密码
-- 路由：`/login`
+	GET：显示页面
+	POST：接收用户名密码
+	路由：`/login`
 
 ## 后端代码
 
@@ -165,10 +163,10 @@ templates/login.html
  **关键说明：**
 
 1. `@app.route('/login', methods=['GET', 'POST'])`
-   - GET：打开页面
-   - POST：提交表单
+	GET：打开页面
+    POST：提交表单
 
 2. HTML 表单关键：
-   - `method="post"`
-   - `action="/login"`
-   - input 必须有 name 属性
+	`method="post"`
+	`action="/login"`
+	input 必须有 name 属性
