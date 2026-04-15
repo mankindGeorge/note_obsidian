@@ -162,7 +162,7 @@ templates/login.html
 </html>
 ```
 
-## 关键说明
+ **关键说明：**
 
 1. `@app.route('/login', methods=['GET', 'POST'])`
    - GET：打开页面
