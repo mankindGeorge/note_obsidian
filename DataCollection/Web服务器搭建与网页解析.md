@@ -1,5 +1,5 @@
-## Flask 基础
-### 第一个启动程序
+# Flask 基础
+## 第一个启动程序
 
 主程序 app.py
 
@@ -35,8 +35,8 @@ if __name__ == '__main__':
 
 ---
 
-## 网页模板
-### 模板文件
+# 网页模板
+## 模板文件
 
 templates/hello.html
 
@@ -59,7 +59,7 @@ templates/hello.html
 </html>
 ```
 
-### 主程序
+## 主程序
 
 app.py
 
@@ -85,7 +85,7 @@ if __name__ == '__main__':
 
 ---
 
-## 显示静态图片
+# 显示静态图片
 
 **方法一：相对路径**
 
@@ -103,7 +103,7 @@ if __name__ == '__main__':
 
 ---
 
-## 用户提交请求
+# 用户提交请求
 
 **说明：**
 
@@ -111,7 +111,7 @@ if __name__ == '__main__':
 - POST：接收用户名密码
 - 路由：`/login`
 
-### 后端代码
+## 后端代码
 
 app.py
 
@@ -134,7 +134,7 @@ if __name__ == '__main__':
     app.run(debug=True)
 ```
 
-### 表单页面
+## 表单页面
 
 templates/login.html
 
@@ -162,7 +162,7 @@ templates/login.html
 </html>
 ```
 
-### 关键说明
+## 关键说明
 
 1. `@app.route('/login', methods=['GET', 'POST'])`
    - GET：打开页面
