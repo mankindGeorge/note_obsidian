@@ -1,0 +1,64 @@
+{
+  "customOrder": {
+    "/": {
+      "children": [
+        "DataCollection",
+        "DB",
+        "os",
+        "DayPlan",
+        "Excalidraw",
+        "README.md"
+      ],
+      "sortOrder": "custom"
+    },
+    "DataCollection": {
+      "children": [
+        "DataCollection/Web服务器搭建与网页解析.md"
+      ],
+      "sortOrder": "custom"
+    },
+    "DayPlan": {
+      "children": [
+        "DayPlan/2026-04-18.md"
+      ],
+      "sortOrder": "custom"
+    },
+    "DB": {
+      "children": [
+        "DB/结构化查询语言SQL.md"
+      ],
+      "sortOrder": "custom"
+    },
+    "Excalidraw": {
+      "children": [
+        "Excalidraw/Drawing 2026-04-16 17.03.26.excalidraw.md"
+      ],
+      "sortOrder": "custom"
+    },
+    "os": {
+      "children": [
+        "os/assets",
+        "os/1.引论.md",
+        "os/进程的描述与控制.md"
+      ],
+      "sortOrder": "custom"
+    },
+    "os/assets": {
+      "children": [
+        "os/assets/1.引论"
+      ],
+      "sortOrder": "custom"
+    },
+    "os/assets/1.引论": {
+      "children": [
+        "os/assets/1.引论/file-20260415210818904.png",
+        "os/assets/1.引论/file-20260415210818905.png",
+        "os/assets/1.引论/file-20260415210818906.png"
+      ],
+      "sortOrder": "custom"
+    }
+  },
+  "sortOrder": "custom",
+  "debugMode": true,
+  "newItemPlacement": "top"
+}

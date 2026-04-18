@@ -3,5 +3,9 @@
   "obsidian-excalidraw-plugin",
   "smart-connections",
   "templater-obsidian",
-  "open-in-new-tab"
+  "open-in-new-tab",
+  "calendar",
+  "dataview",
+  "obsidian-custom-attachment-location",
+  "manual-sorting"
 ]
