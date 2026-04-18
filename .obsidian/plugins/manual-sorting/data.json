@@ -6,7 +6,6 @@
         "DB",
         "os",
         "DayPlan",
-        "Excalidraw",
         "templates",
         "README.md"
       ],
@@ -30,16 +29,10 @@
       ],
       "sortOrder": "custom"
     },
-    "Excalidraw": {
-      "children": [
-        "Excalidraw/Drawing 2026-04-16 17.03.26.excalidraw.md"
-      ],
-      "sortOrder": "custom"
-    },
     "os": {
       "children": [
         "os/assets",
-        "os/1.引论.md",
+        "os/引论.md",
         "os/进程的描述与控制.md"
       ],
       "sortOrder": "custom"
