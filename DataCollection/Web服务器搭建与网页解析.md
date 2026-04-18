@@ -101,6 +101,44 @@ if __name__ == '__main__':
 
 实际路径：`static/head.webp`
 
+
+# url_for()函数
+
+模板基本用法
+
+```jinja2
+{{ url_for('端点', 参数1=值1, 参数2=值2) }}
+```
+
+第一个参数：**endpoint 端点**
+- **常规路由**：视图函数名
+
+```python
+@app.route('/login') 
+def login(): # 端点就是 login 
+	pass
+```
+
+调用：`url_for('login')`
+
+- **蓝图路由**：蓝图名.函数名
+
+```python
+auth = Blueprint('auth', __name__)
+
+@auth.route('/register')
+def register(): 
+	pass
+```
+
+调用：`url_for('auth.register')`
+
+- 静态文件固定端点：**static**
+
+```jinja2
+{{ url_for('static', filename='css/style.css') }}
+```
+
 ---
 
 # 用户提交请求
