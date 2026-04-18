@@ -11,8 +11,6 @@
 ```python
 p_tag = soup.p
 
-print(p_tag.contents) 
-
 for child in p_tag.children:
     print(child)
 ```
