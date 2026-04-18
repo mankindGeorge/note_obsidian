@@ -36,8 +36,9 @@ if __name__ == '__main__':
 
 # 网页模板
 ## 模板文件
+> 必须放在templates文件夹下
 
-templates/hello.html
+**templates**/hello.html
 
 ```html
 <!DOCTYPE html>
