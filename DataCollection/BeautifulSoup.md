@@ -40,12 +40,12 @@ for sibling in soup.p.next_siblings:
 
 ## 节点导航常用属性对照表
 
-|**导航属性**|**描述**|**返回类型**|
-|---|---|---|
-|`tag.contents`|获取直接子节点|List|
-|`tag.children`|获取直接子节点|Generator|
-|`tag.descendants`|获取所有子孙节点|Generator|
-|`tag.next_sibling`|下一个兄弟节点|Element / String|
-|`tag.next_siblings`|之后的所有兄弟节点|Generator|
-|`tag.parent`|直接父节点|Element|
-|`tag.parents`|所有父辈节点|Generator|
+| **导航属性**            | **描述**    | **返回类型**         |
+| ------------------- | --------- | ---------------- |
+| `tag.contents`      | 获取直接子节点   | List             |
+| `tag.children`      | 获取直接子节点   | Generator        |
+| `tag.descendants`   | 获取所有子孙节点  | Generator        |
+| `tag.next_sibling`  | 下一个兄弟节点   | Element / String |
+| `tag.next_siblings` | 之后的所有兄弟节点 | Generator        |
+| `tag.parent`        | 直接父节点     | Element          |
+| `tag.parents`       | 所有父辈节点    | Generator        |
