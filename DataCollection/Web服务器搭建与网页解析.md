@@ -101,6 +101,7 @@ if __name__ == '__main__':
 
 实际路径：`static/head.webp`
 
+p.s 图片在不改变比例情况裁剪填充：`style = 'object-fit: cover'` 
 
 # url_for()函数
 
@@ -111,7 +112,7 @@ if __name__ == '__main__':
 ```
 
 第一个参数：**endpoint 端点**
-- **常规路由**：视图函数名
+- **常规路由**：视图**函数名**
 
 ```python
 @app.route('/login') 
