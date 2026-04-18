@@ -13,6 +13,7 @@
     },
     "DataCollection": {
       "children": [
+        "DataCollection/BeautifulSoup.md",
         "DataCollection/Web服务器搭建与网页解析.md"
       ],
       "sortOrder": "custom"

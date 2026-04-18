@@ -1,19 +1,20 @@
-# Flask 基础
-## 第一个启动程序
+# Flask 基础入门笔记
 
-主程序 app.py
+## 1. 核心启动程序 (app.py)
+
+Flask 应用实例的初始化、路由定义与服务配置。
 
 ```python
-from flask import Flask
+from flask import Flask, render_template, request
 
 app = Flask(__name__)
 
-# 首页路由
+# 1. 基础路由：返回纯文本或 JSON
 @app.route('/')
 def index():
     return "Hello Flask 后端服务已启动！"
 
-# 示例接口
+# 2. 接口路由：返回字典时 Flask 会自动转换为 JSON 格式
 @app.route('/api/hello')
 def hello():
     return {
@@ -23,24 +24,20 @@ def hello():
     }
 
 if __name__ == '__main__':
-    # 开启调试模式，本地开发用
+    # 参数说明：
+    # debug=True：开发模式，修改代码自动刷新
+    # host='0.0.0.0'：允许本机及局域网内其他设备访问
+    # port=5000：监听端口
     app.run(debug=True, host='0.0.0.0', port=5000)
 ```
+## 2. 网页模板渲染 (Jinja2)
 
-**参数说明：**
-> `debug=True`：开发模式，修改代码自动刷新，**上线关闭**
-> `host='0.0.0.0'`：允许本机/局域网访问
-> `port=5000`：端口号，可自定义 8080、3000 等
+- **目录要求**：HTML 文件必须存放在项目根目录下的 `templates` 文件夹内。
+- **渲染函数**：使用 `render_template` 将后端变量传递至前端。
 
----
+**templates/hello.html**
 
-# 网页模板
-## 模板文件
-> 必须放在templates文件夹下
-
-**templates**/hello.html
-
-```html
+```HTML
 <!DOCTYPE html>
 <html lang="zh-CN">
 <head>
@@ -50,7 +47,7 @@ if __name__ == '__main__':
 <body>
     <h1>
         {% if name %}
-            Hello, {{ name }}!
+            Hello, {{ name }}!  {# 使用 {{ }} 获取变量 #}
         {% else %}
             Hello, Flask!
         {% endif %}
@@ -58,155 +55,140 @@ if __name__ == '__main__':
 </body>
 </html>
 ```
+## 3. 静态文件处理与 url_for 函数
 
-## 主程序
+- **目录要求**：图片、CSS、JS 文件存放在 `static` 文件夹内。
+- **引用方式**：优先使用 `url_for` 动态生成路径，增强代码可移植性。
 
-app.py
+|**引用方式**|**示例代码**|
+|---|---|
+|**相对路径**|`<img src="/static/images/test.jpg">`|
+|**url_for 函数**|`<img src="{{ url_for('static', filename='head.webp') }}">`|
 
-```python
-from flask import Flask, render_template
+**url_for 参数对照：**
 
-app = Flask(__name__)
+- **普通路由**：`url_for('index')` 对应视图**函数名** `index`。
+- **静态文件**：`url_for('static', filename='...')` 固定端点为 `static`。
+- **图片缩放**：`style='object-fit: cover'` 可实现不改变比例的裁剪填充。
+## 4. 请求处理：GET 与 POST
 
-# 首页路由
-@app.route('/')
-def index():
-    return "Flask 后端已启动"
+通过 `methods` 参数控制路由允许的请求类型，并利用 `request` 对象获取表单数据。
 
-# 带参数的网页模板
-@app.route('/hello')
-@app.route('/hello/<name>')
-def hello(name=None):
-    return render_template('hello.html', name=name)
+**app.py 逻辑：**
 
-if __name__ == '__main__':
-    app.run(debug=True, host='0.0.0.0', port=5000)
-```
-
----
-
-# 显示静态图片
-
-**方法一：相对路径**
-
-```html
-<img src="/static/images/test.jpg" alt="图片">
-```
-
-**方法二：url_for() 函数**
-
-```html
-<img src="{{ url_for('static', filename='head.webp') }}" alt="图片">
-```
-
-实际路径：`static/head.webp`
-
-p.s 图片在不改变比例情况裁剪填充：`style = 'object-fit: cover'` 
-
-# url_for()函数
-
-模板基本用法
-
-```jinja2
-{{ url_for('端点', 参数1=值1, 参数2=值2) }}
-```
-
-第一个参数：**endpoint 端点**
-- **常规路由**：视图**函数名**
-
-```python
-@app.route('/login') 
-def login(): # 端点就是 login 
-	pass
-```
-
-调用：`url_for('login')`
-
-- **蓝图路由**：蓝图名.函数名
-
-```python
-auth = Blueprint('auth', __name__)
-
-@auth.route('/register')
-def register(): 
-	pass
-```
-
-调用：`url_for('auth.register')`
-
-- 静态文件固定端点：**static**
-
-```jinja2
-{{ url_for('static', filename='css/style.css') }}
-```
-
----
-
-# 用户提交请求
-
-**说明：**
-> GET：显示页面
-> POST：接收用户名密码
-> 路由：`/login`
-
-## 后端代码
-
-app.py
-
-```python
+```Python
 @app.route('/login', methods=['GET', 'POST'])
 def login():
     if request.method == 'POST':
-        # 获取表单数据
+        # 获取表单中 name="username" 的输入值
         username = request.form.get('username')
         password = request.form.get('password')
 
-        # 简单判断
         if username == 'admin' and password == '123456':
             return f'登录成功！欢迎 {username}'
-        else:
-            return '用户名或密码错误'
+        return '用户名或密码错误'
+        
+    # GET 请求时返回登录页面
     return render_template('login.html')
+```
+
+**templates/login.html 关键要素：**
+
+- **form 标签**：必须设置 `method="post"` 和 `action="/login"`。
+- **input 标签**：必须设置 `name` 属性，后端根据此属性名接收数据。
+### 5. 目录结构参考
+
+```Plaintext
+/Project_Root
+    ├── app.py             (主程序)
+    ├── static/            (存放图片/CSS/JS)
+    │   └── head.webp
+    └── templates/         (存放 HTML 模板)
+        ├── hello.html
+        └── login.html
+```
+
+# Flask 蓝图 (Blueprint)
+
+蓝图是 Flask 提供的一种模块化管理代码的方式。它允许你将相关的视图函数、模板和静态文件组织成独立的分块，解决主程序 `app.py` 过大且难以维护的问题。
+
+## 1. 蓝图的核心作用
+
+- **模块化**：将应用拆分为用户模块、商品模块、后台管理模块等。
+- **路径前缀**：为整个模块的路由统一添加前缀（如 `/auth/login`, `/auth/register`）。
+- **独立资源**：每个蓝图可以拥有独立的 `templates` 和 `static` 文件夹。
+
+## 2. 创建蓝图模块
+
+通常在项目中新建一个文件夹或文件（例如 `auth.py`）来定义蓝图。
+
+**auth.py**
+
+```Python
+from flask import Blueprint
+
+# 1. 初始化蓝图对象
+# 参数：蓝图名称, 导入名, 路由前缀
+auth_bp = Blueprint('auth', __name__, url_prefix='/auth')
+
+# 2. 定义路由
+@auth_bp.route('/login')
+def login():
+    return "这是登录页面"
+
+@auth_bp.route('/register')
+def register():
+    return "这是注册页面"
+```
+
+## 3. 在主程序中注册蓝图
+
+只有将蓝图注册到 `app` 实例中，这些路由才会生效。
+
+**app.py**
+
+```Python
+from flask import Flask
+from auth import auth_bp  # 导入刚才创建的蓝图
+
+app = Flask(__name__)
+
+# 注册蓝图
+app.register_blueprint(auth_bp)
 
 if __name__ == '__main__':
     app.run(debug=True)
 ```
 
-## 表单页面
+## 4. 蓝图中的 url_for 反向解析
 
-templates/login.html
+在蓝图内部或外部使用 `url_for` 时，必须加上蓝图的名称前缀。
 
-```html
-<!DOCTYPE html>
-<html lang="zh-CN">
-<head>
-    <meta charset="UTF-8">
-    <title>登录</title>
-</head>
-<body>
-    <h2>用户登录</h2>
-    <form action="/login" method="post">
-        <div>
-            用户名：<input type="text" name="username" required>
-        </div>
-        <br>
-        <div>
-            密码：<input type="password" name="password" required>
-        </div>
-        <br>
-        <button type="submit">登录</button>
-    </form>
-</body>
-</html>
+|**场景**|**语法**|**解析结果**|
+|---|---|---|
+|**解析蓝图路由**|`url_for('auth.login')`|`/auth/login`|
+|**同一蓝图内跳转**|`url_for('.login')`|`/auth/login` (点号表示当前蓝图)|
+
+## 5. 模块化项目结构参考
+
+使用蓝图后的推荐目录结构：
+
+```Plaintext
+/Project_Root
+    ├── app.py              (主启动文件，负责注册蓝图)
+    ├── auth.py             (用户认证相关蓝图)
+    ├── goods.py            (商品业务相关蓝图)
+    ├── static/             (公共静态资源)
+    └── templates/          (公共模板)
 ```
 
- **关键说明：**
+## 6. 蓝图独立资源目录
 
-1. `@app.route('/login', methods=['GET', 'POST'])`
-> GET：打开页面
-> POST：提交表单
+如果在创建蓝图时指定了模板目录，Flask 会优先在全局 `templates` 找，找不到再去蓝图目录找。
 
-2. HTML 表单关键：
-> `method="post"`
-> `action="/login"`
-> input 必须有 name 属性
+```Python
+# 指定独立的模板和静态资源路径
+admin_bp = Blueprint('admin', __name__, 
+    template_folder='admin_templates',
+    static_folder='admin_static')
+```
