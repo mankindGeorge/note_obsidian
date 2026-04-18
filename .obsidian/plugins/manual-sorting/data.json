@@ -7,6 +7,7 @@
         "os",
         "DayPlan",
         "Excalidraw",
+        "templates",
         "README.md"
       ],
       "sortOrder": "custom"
@@ -54,6 +55,12 @@
         "os/assets/1.引论/file-20260415210818904.png",
         "os/assets/1.引论/file-20260415210818905.png",
         "os/assets/1.引论/file-20260415210818906.png"
+      ],
+      "sortOrder": "custom"
+    },
+    "templates": {
+      "children": [
+        "templates/xxxx-xx-xx.md"
       ],
       "sortOrder": "custom"
     }
