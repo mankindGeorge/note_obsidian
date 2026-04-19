@@ -31,7 +31,7 @@
       "enableOpus1M": false,
       "enableSonnet1M": false,
       "lastModel": "haiku",
-      "environmentVariables": "ANTHROPIC_AUTH_TOKEN=sk-146b6ed500974eadb88b3799176a372e\nANTHROPIC_BASE_URL=https://api.deepseek.com/anthropic\nANTHROPIC_MODEL=deepseek-chat\nANTHROPIC_SMALL_FAST_MODEL=deepseek-chat\nCLAUDE_CODE_DISABLE_NONESSENTIAL_TRAFFIC=1\nPATH=D:\\Program Files\\nextjs",
+      "environmentVariables": "ANTHROPIC_AUTH_TOKEN=sk-146b6ed500974eadb88b3799176a372e\nANTHROPIC_BASE_URL=https://api.deepseek.com/anthropic\nANTHROPIC_MODEL=deepseek-chat\nANTHROPIC_SMALL_FAST_MODEL=deepseek-chat\nCLAUDE_CODE_DISABLE_NONESSENTIAL_TRAFFIC=1\n",
       "environmentHash": "ANTHROPIC_BASE_URL=https://api.deepseek.com/anthropic|ANTHROPIC_MODEL=deepseek-chat"
     },
     "codex": {

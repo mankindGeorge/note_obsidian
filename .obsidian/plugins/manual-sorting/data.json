@@ -55,6 +55,7 @@
     },
     "templates": {
       "children": [
+        "templates/os模板.md",
         "templates/xxxx-xx-xx.md"
       ],
       "sortOrder": "custom"
