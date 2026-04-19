@@ -47,6 +47,13 @@
       ],
       "sortOrder": "custom"
     },
+    "os/assets/进程的描述与控制": {
+      "children": [
+        "os/assets/进程的描述与控制/file-20260419161547252.png",
+        "os/assets/进程的描述与控制/file-20260419161525512.png"
+      ],
+      "sortOrder": "custom"
+    },
     "os/assets/引论": {
       "children": [
         "os/assets/引论/file-20260419160210303.png",
@@ -62,13 +69,6 @@
       "children": [
         "templates/os模板.md",
         "templates/xxxx-xx-xx.md"
-      ],
-      "sortOrder": "custom"
-    },
-    "os/assets/进程的描述与控制": {
-      "children": [
-        "os/assets/进程的描述与控制/file-20260419161547252.png",
-        "os/assets/进程的描述与控制/file-20260419161525512.png"
       ],
       "sortOrder": "custom"
     }
