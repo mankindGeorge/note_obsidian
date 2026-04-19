@@ -1,0 +1,12 @@
+{
+  "id": "conv-1776575020244-1fbe08wto",
+  "providerId": "claude",
+  "title": "帮我整理一下此笔记的排版，要求基本不改变原文内容，有些地方解释不清楚的可以加以解释",
+  "titleGenerationStatus": "failed",
+  "createdAt": 1776575020245,
+  "updatedAt": 1776576069166,
+  "lastResponseAt": 1776576069166,
+  "sessionId": null,
+  "providerState": {},
+  "currentNote": "os/引论.md"
+}
