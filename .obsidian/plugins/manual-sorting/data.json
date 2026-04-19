@@ -13,12 +13,14 @@
     },
     "DataCollection": {
       "children": [
+        "DataCollection/BeautifulSoup.md",
         "DataCollection/Web服务器搭建与网页解析.md"
       ],
       "sortOrder": "custom"
     },
     "DayPlan": {
       "children": [
+        "DayPlan/2026-04-19.md",
         "DayPlan/2026-04-18.md"
       ],
       "sortOrder": "custom"
@@ -53,6 +55,7 @@
     },
     "templates": {
       "children": [
+        "templates/os模板.md",
         "templates/xxxx-xx-xx.md"
       ],
       "sortOrder": "custom"
