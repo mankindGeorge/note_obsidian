@@ -96,7 +96,7 @@ def login():
 
 - **form 标签**：必须设置 `method="post"` 和 `action="/login"`。
 - **input 标签**：必须设置 `name` 属性，后端根据此属性名接收数据。
-### 5. 目录结构参考
+## 5. 目录结构参考
 
 ```Plaintext
 /Project_Root
