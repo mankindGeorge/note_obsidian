@@ -2,6 +2,7 @@
   "customOrder": {
     "/": {
       "children": [
+        "test in my computer.md",
         "DataCollection",
         "DB",
         "os",
@@ -41,12 +42,16 @@
     },
     "os/assets": {
       "children": [
+        "os/assets/进程的描述与控制",
         "os/assets/引论"
       ],
       "sortOrder": "custom"
     },
     "os/assets/引论": {
       "children": [
+        "os/assets/引论/file-20260419160210303.png",
+        "os/assets/引论/file-20260419155958582.png",
+        "os/assets/引论/file-20260419150940047.png",
         "os/assets/引论/file-20260418203902598.png",
         "os/assets/引论/file-20260418203902603.png",
         "os/assets/引论/file-20260418203902606.png"
@@ -57,6 +62,13 @@
       "children": [
         "templates/os模板.md",
         "templates/xxxx-xx-xx.md"
+      ],
+      "sortOrder": "custom"
+    },
+    "os/assets/进程的描述与控制": {
+      "children": [
+        "os/assets/进程的描述与控制/file-20260419161547252.png",
+        "os/assets/进程的描述与控制/file-20260419161525512.png"
       ],
       "sortOrder": "custom"
     }
