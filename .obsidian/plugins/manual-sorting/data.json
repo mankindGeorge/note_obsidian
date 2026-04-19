@@ -3,6 +3,8 @@
     "/": {
       "children": [
         "test in my computer.md",
+        "test in my phone.md",
+        "Excalidraw",
         "DataCollection",
         "DB",
         "os",
@@ -30,6 +32,10 @@
       "children": [
         "DB/结构化查询语言SQL.md"
       ],
+      "sortOrder": "custom"
+    },
+    "Excalidraw": {
+      "children": [],
       "sortOrder": "custom"
     },
     "os": {
