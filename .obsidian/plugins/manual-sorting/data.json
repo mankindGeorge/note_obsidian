@@ -22,6 +22,7 @@
     },
     "DayPlan": {
       "children": [
+        "DayPlan/2026-04-21.md",
         "DayPlan/2026-04-20.md",
         "DayPlan/2026-04-19.md",
         "DayPlan/2026-04-18.md"
@@ -37,6 +38,7 @@
     "os": {
       "children": [
         "os/assets",
+        "os/重点ai总结.md",
         "os/引论.md",
         "os/进程的描述与控制.md"
       ],
