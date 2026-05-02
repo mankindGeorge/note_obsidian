@@ -6,7 +6,6 @@
         "DataCollection",
         "DB",
         "os",
-        "DayPlan",
         "templates",
         "README.md"
       ],
@@ -18,15 +17,6 @@
         "DataCollection/网络爬虫.md",
         "DataCollection/BeautifulSoup.md",
         "DataCollection/Web服务器搭建与网页解析.md"
-      ],
-      "sortOrder": "custom"
-    },
-    "DayPlan": {
-      "children": [
-        "DayPlan/2026-04-21.md",
-        "DayPlan/2026-04-20.md",
-        "DayPlan/2026-04-19.md",
-        "DayPlan/2026-04-18.md"
       ],
       "sortOrder": "custom"
     },
