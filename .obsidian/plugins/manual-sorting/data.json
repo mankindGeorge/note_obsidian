@@ -2,6 +2,7 @@
   "customOrder": {
     "/": {
       "children": [
+        "CLAUDE.md",
         "DataCollection",
         "DB",
         "os",
