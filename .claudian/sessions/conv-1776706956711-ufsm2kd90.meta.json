@@ -1,0 +1,23 @@
+{
+  "id": "conv-1776706956711-ufsm2kd90",
+  "providerId": "claude",
+  "title": "使用本目录下SKILL",
+  "titleGenerationStatus": "failed",
+  "createdAt": 1776706956711,
+  "updatedAt": 1776744683084,
+  "lastResponseAt": 1776707431898,
+  "sessionId": "7f0e470c-b2ee-472c-9517-182eb8f25cb3",
+  "providerState": {
+    "providerSessionId": "7f0e470c-b2ee-472c-9517-182eb8f25cb3"
+  },
+  "currentNote": "RSS articles/Cozy_Game_for_Learning_SPANISH!_🇪🇸_transcript.md",
+  "usage": {
+    "model": "haiku",
+    "inputTokens": 16222,
+    "cacheCreationInputTokens": 0,
+    "cacheReadInputTokens": 17536,
+    "contextWindow": 200000,
+    "contextTokens": 33758,
+    "percentage": 17
+  }
+}

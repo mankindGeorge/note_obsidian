@@ -3,12 +3,12 @@
     "/": {
       "children": [
         "DayPlan",
-        "CLAUDE.md",
         "DataCollection",
         "DB",
         "os",
         "templates",
-        "README.md"
+        "README.md",
+        "CLAUDE.md"
       ],
       "sortOrder": "custom"
     },
@@ -23,6 +23,7 @@
     },
     "DayPlan": {
       "children": [
+        "DayPlan/2026-05-05.md",
         "DayPlan/2026-04-18.md",
         "DayPlan/2026-04-19.md",
         "DayPlan/2026-04-20.md",
