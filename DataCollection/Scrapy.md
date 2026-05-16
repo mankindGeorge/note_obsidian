@@ -35,6 +35,9 @@ Scrapy 是一个项目框架，必须遵循特定的目录结构。
 pip install scrapy
 scrapy startproject my_first_spider  # 创建项目文件夹
 cd my_first_spider
+
+# 或者使用 genspider 直接生成爬虫文件
+scrapy genspider quotes quotes.toscrape.com  # 自动创建 quotes.py
 ```
 
 #### **第二步：编写爬虫 (Spider)**
@@ -326,6 +329,169 @@ for item in response.xpath('//div[@class="item"]'):
     price = item.xpath('.//span[@class="price"]/text()').re(r'[\d.]+')
     # 继续处理...
 ```
+
+---
+
+# CrawlSpider 规则爬虫
+
+CrawlSpider 是 Scrapy 提供的**基于规则的自动爬虫类**，适合结构固定的网站（如新闻、博客、商品列表）。
+
+## 与普通 Spider 的区别
+
+| 特性 | Spider | CrawlSpider |
+| --- | --- | --- |
+| 链接发现 | 手动 `follow` | 自动匹配规则 |
+| 代码量 | 多 | 少 |
+| 适合场景 | 复杂逻辑 | 结构固定 |
+| 去重 | 需手动处理 | 自动处理 |
+
+## 基本结构
+
+```python
+from scrapy.spiders import CrawlSpider, Rule
+from scrapy.linkextractors import LinkExtractor
+
+class MySpider(CrawlSpider):
+    name = 'myspider'
+    allowed_domains = ['example.com']
+    start_urls = ['https://www.example.com/']
+
+    rules = (
+        Rule(LinkExtractor(...), callback='parse_item'),
+        Rule(LinkExtractor(...), follow=True),
+    )
+```
+
+## Rule 参数说明
+
+| 参数 | 说明 |
+| --- | --- |
+| `LinkExtractor` | 链接提取器，定义匹配规则 |
+| `callback` | 回调函数，解析链接页面（不设则只跟进不解析） |
+| `follow` | 是否跟进匹配到的链接 |
+| `cb_kwargs` | 传递给回调函数的参数 |
+
+## LinkExtractor 常用参数
+
+```python
+# 按正则匹配
+LinkExtractor(allow=r'/article/\d+')
+
+# 按正则排除
+LinkExtractor(deny=r'/admin|/login')
+
+# 限制域名
+LinkExtractor(allow_domains=['news.com'])
+
+# 限制区域（只在特定范围内找链接）
+LinkExtractor(restrict_xpaths='//div[@class="pagination"]')
+LinkExtractor(restrict_css='.pagination a')
+```
+
+## 实战示例
+
+### 示例：爬取新闻列表
+
+```python
+import scrapy
+from scrapy.spiders import CrawlSpider, Rule
+from scrapy.linkextractors import LinkExtractor
+
+class NewsSpider(CrawlSpider):
+    name = 'news'
+    allowed_domains = ['example.com']
+    start_urls = ['https://example.com/news']
+
+    rules = (
+        # 匹配文章链接，交给 parse_item 解析
+        Rule(
+            LinkExtractor(allow=r'/news/\d+\.html'),
+            callback='parse_item'
+        ),
+        # 匹配分页链接，继续跟进（不设 callback）
+        Rule(
+            LinkExtractor(allow=r'/news/page_\d+\.html'),
+            follow=True
+        ),
+    )
+
+    def parse_item(self, response):
+        yield {
+            'title': response.css('h1.title::text').get(),
+            'content': response.css('div.content::text').getall(),
+            'date': response.css('span.date::text').get(),
+            'url': response.url,
+        }
+```
+
+### 示例：爬取博客园
+
+```python
+class CnblogsSpider(CrawlSpider):
+    name = 'cnblogs'
+    allowed_domains = ['cnblogs.com']
+    start_urls = ['https://www.cnblogs.com/']
+
+    rules = (
+        # 匹配文章链接
+        Rule(
+            LinkExtractor(
+                allow=r'/.*/p/\d+\.html',
+                restrict_css='div.post-item'
+            ),
+            callback='parse_item'
+        ),
+        # 匹配分页链接，继续跟进
+        Rule(
+            LinkExtractor(
+                allow=r'/sitehome/p/\d+',
+                restrict_css='div.pager'
+            ),
+            follow=True
+        ),
+    )
+
+    def parse_item(self, response):
+        yield {
+            'title': response.css('a.post-title::text').get(),
+            'author': response.css('a.author::text').get(),
+            'date': response.css('span.post-date::text').get(),
+            'content': response.css('div.post-content').get(),
+            'url': response.url,
+        }
+```
+
+## 常用配置组合
+
+```python
+# 只抓取匹配正则的链接
+rules = (
+    Rule(LinkExtractor(allow=r'/article/\d+'), callback='parse_item'),
+)
+
+# 匹配多个规则
+rules = (
+    Rule(LinkExtractor(allow=r'/category/\w+'), follow=True),
+    Rule(LinkExtractor(allow=r'/product/\d+'), callback='parse_product'),
+    Rule(LinkExtractor(allow=r'/page/\d+'), follow=True),
+)
+
+# 排除不需要的链接
+rules = (
+    Rule(LinkExtractor(
+        allow=r'/article/\d+',
+        deny=[r'/admin', r'/user/profile']
+    ), callback='parse_item'),
+)
+```
+
+## 注意事项
+
+1. **callback 不能用 `parse`**：CrawlSpider 的 `parse` 方法已被框架使用
+2. **follow 的作用**：
+   - `follow=True`：匹配到的链接会被加入待抓队列
+   - `follow=False`：只抓匹配到的链接，不跟进
+3. **多 Rule 执行顺序**：按定义顺序依次匹配
 
 ---
 
