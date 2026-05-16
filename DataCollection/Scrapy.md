@@ -177,6 +177,156 @@ for quote in response.css('div.quote'):
     }
 ```
 
+### XPath 选择器
+
+XPath 是一种在 XML/HTML 文档中查找节点的语言，比 CSS 更强大，支持函数和条件判断。
+
+#### 基础语法
+
+```python
+response.xpath('xpath表达式')      # 返回 SelectorList
+response.xpath('xpath').get()      # 返回第一个结果
+response.xpath('xpath').getall()   # 返回所有结果
+```
+
+#### 常用路径表达式
+
+| 表达式 | 说明 | 示例 |
+| --- | --- | --- |
+| `//tag` | 任意位置的标签 | `//div` |
+| `/tag` | 根目录下的标签 | `/html/body/div` |
+| `//tag[@attr]` | 含属性的标签 | `//a[@href]` |
+| `//tag[@attr="value"]` | 属性等于 | `//a[@href="url"]` |
+| `.` | 当前节点 | `.//div` |
+| `..` | 父节点 | `..//div` |
+
+#### 轴（Axes）
+
+| 表达式 | 说明 | 示例 |
+| --- | --- | --- |
+| `//div/child::p` | 子元素 | `//div/child::p` |
+| `//div/descendant::span` | 后代元素 | `//div/descendant::span` |
+| `//p/parent::div` | 父元素 | `//p/parent::div` |
+| `//span/following-sibling::p` | 后续兄弟 | `//span/following-sibling::p` |
+| `//span/preceding-sibling::p` | 前置兄弟 | `//span/preceding-sibling::p` |
+
+#### 常用函数
+
+| 函数 | 说明 | 示例 |
+| --- | --- | --- |
+| `text()` | 获取文本 | `//h1/text()` |
+| `normalize-space()` | 去除空白 | `normalize-space(//p/text())` |
+| `contains(@attr, 'text')` | 属性包含 | `//a[contains(@href, 'login')]` |
+| `starts-with(@attr, 'text')` | 属性开头 | `//img[starts-with(@src, 'https')]` |
+| `ends-with(@attr, 'text')` | 属性结尾 | `//img[ends-with(@src, '.jpg')]` |
+| `position()` | 位置 | `//li[position()=1]` |
+| `last()` | 最后一个 | `//li[last()]` |
+| `count()` | 计数 | `count(//div)` |
+| `string-length()` | 字符串长度 | `string-length(//title)` |
+
+#### 谓词（条件筛选）
+
+```python
+# 按位置
+response.xpath('//li[1]')                  # 第一个 li
+response.xpath('//li[last()]')              # 最后一个 li
+response.xpath('//li[position() < 3]')      # 前两个 li
+
+# 按属性条件
+response.xpath('//a[@class="link"]')        # class="link"
+response.xpath('//a[@href]')                # 有 href 属性
+response.xpath('//div[@id and @class]')    # 同时有 id 和 class
+
+# 按文本内容
+response.xpath('//span[text()="Hello"]')   # 文本等于 "Hello"
+response.xpath('//p[contains(text(), "error")]')  # 包含 "error"
+```
+
+#### 提取内容
+
+```python
+# 获取文本
+response.xpath('//h1/text()').get()
+response.xpath('//div/text()').getall()
+
+# 获取属性
+response.xpath('//a/@href').get()          # 获取链接
+response.xpath('//img/@src').get()         # 获取图片
+
+# 组合：获取属性值
+response.xpath('//a[@class="author"]/@href').get()
+```
+
+#### CSS 与 XPath 对照
+
+| CSS | XPath |
+| --- | --- |
+| `div` | `//div` |
+| `div > p` | `//div/p` |
+| `div p` | `//div//p` |
+| `div.quote` | `//div[contains(@class,'quote')]` |
+| `div#content` | `//div[@id='content']` |
+| `a[href]` | `//a[@href]` |
+| `a[href="url"]` | `//a[@href='url']` |
+| `a::text` | `//a/text()` |
+| `a::attr(href)` | `//a/@href` |
+| `li:first-child` | `//li[1]` |
+| `li:last-child` | `//li[last()]` |
+| `li:nth-child(2)` | `//li[2]` |
+
+#### 实际示例解析
+
+```python
+# HTML 结构
+# <div class="quote">
+#     <span class="text">"Hello World"</span>
+#     <small class="author">Author Name</small>
+# </div>
+
+# XPath 版本
+for quote in response.xpath('//div[@class="quote"]'):
+    yield {
+        'text': quote.xpath('.//span[@class="text"]/text()').get(),
+        'author': quote.xpath('.//small[@class="author"]/text()').get(),
+    }
+
+# 等价的 CSS 版本
+for quote in response.css('div.quote'):
+    yield {
+        'text': quote.css('span.text::text').get(),
+        'author': quote.css('small.author::text').get(),
+    }
+```
+
+#### XPath 特有的强大用法
+
+```python
+# 1. 获取父元素
+response.xpath('//span[@class="author"]/..').get()
+
+# 2. 获取兄弟元素
+response.xpath('//h2[text()="Title"]/following-sibling::p/text()').getall()
+
+# 3. 组合条件
+response.xpath('//div[contains(@class,"item") and @data-id]//a/@href').getall()
+
+# 4. 统计数量
+count = response.xpath('count(//div[@class="product"])').get()
+# count: 25
+
+# 5. 字符串处理
+response.xpath('//title/text()').re(r'(\d+)')  # 提取数字
+```
+
+#### 链式调用
+
+```python
+# XPath 同样支持链式调用
+for item in response.xpath('//div[@class="item"]'):
+    price = item.xpath('.//span[@class="price"]/text()').re(r'[\d.]+')
+    # 继续处理...
+```
+
 ---
 
 # Item 与 ItemLoader
