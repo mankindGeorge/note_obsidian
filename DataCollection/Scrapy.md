@@ -1280,6 +1280,69 @@ DEFAULT_REQUEST_HEADERS = {
 USER_AGENT = 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36'
 ```
 
+## Cookie 配置
+
+```python
+# 禁用自动 Cookie 管理（节省资源）
+COOKIES_ENABLED = False
+
+# 记录 Cookie 到日志（调试用）
+COOKIES_DEBUG = False
+```
+
+### 在请求头中添加 Cookie
+
+有些网站需要登录才能访问，可以通过在请求头中添加 Cookie 来通过验证：
+
+```python
+DEFAULT_REQUEST_HEADERS = {
+    'Accept': 'text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8',
+    'Accept-Language': 'zh-CN,zh;q=0.9,en;q=0.8',
+    'Referer': 'https://www.example.com/',
+    'Cookie': 'bid=xxxxxx; ll=118282; _ga=GA1.2.1234567890.1234567890',
+}
+```
+
+### 获取 Cookie 的方法
+
+1. **浏览器开发者工具**
+   - 登录网站 → F12 打开开发者工具 → Network
+   - 刷新页面 → 点击任意请求 → Headers → Request Headers → Cookie
+
+2. **使用 rookiepy 库**
+
+```python
+import rookiepy
+
+# 获取浏览器 Cookie
+cj = rookiepy.edge(['example.com'])
+cookie_dict = {c['name']: c['value'] for c in cj}
+# 输出: {'bid': 'xxxxxx', 'll': '118282', ...}
+```
+
+### 动态 Cookie 中间件
+
+如果 Cookie 会过期，可以用中间件动态获取：
+
+```python
+# middlewares.py
+import rookiepy
+from datetime import datetime
+
+class CookiesMiddleware:
+    def __init__(self):
+        self.cookies = None
+        self.last_update = None
+    
+    def process_request(self, request, spider):
+        # 每小时更新一次 Cookie
+        if not self.cookies or (datetime.now() - self.last_update).seconds > 3600:
+            self.cookies = rookiepy.edge(['douban.com'])
+            self.last_update = datetime.now()
+        
+        request.cookies = self.cookies
+```
+
 ## 中间件配置
 
 ```python
