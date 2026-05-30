@@ -3,6 +3,7 @@
     "/": {
       "children": [
         "DayPlan",
+        "RegressionAnalysis",
         "DataCollection",
         "DB",
         "os",
@@ -70,6 +71,12 @@
         "os/assets/引论/file-20260418203902598.png",
         "os/assets/引论/file-20260418203902603.png",
         "os/assets/引论/file-20260418203902606.png"
+      ],
+      "sortOrder": "custom"
+    },
+    "RegressionAnalysis": {
+      "children": [
+        "RegressionAnalysis/应用回归分析期末复习.md"
       ],
       "sortOrder": "custom"
     },

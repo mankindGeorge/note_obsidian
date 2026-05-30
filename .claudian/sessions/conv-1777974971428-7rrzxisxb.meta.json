@@ -4,8 +4,8 @@
   "title": "Start conversation",
   "titleGenerationStatus": "success",
   "createdAt": 1777974971428,
-  "updatedAt": 1779612520829,
-  "lastResponseAt": 1779612520829,
+  "updatedAt": 1780141311727,
+  "lastResponseAt": 1780141311727,
   "sessionId": "8debabbf-3f1c-4ffe-866a-220b3795333f",
   "providerState": {
     "providerSessionId": "8debabbf-3f1c-4ffe-866a-220b3795333f"
@@ -13,12 +13,12 @@
   "currentNote": "CLAUDE.md",
   "usage": {
     "model": "haiku",
-    "inputTokens": 70750,
+    "inputTokens": 0,
     "cacheCreationInputTokens": 0,
     "cacheReadInputTokens": 0,
     "contextWindow": 200000,
-    "contextTokens": 70750,
-    "percentage": 35,
+    "contextTokens": 0,
+    "percentage": 0,
     "contextWindowIsAuthoritative": true
   }
 }
