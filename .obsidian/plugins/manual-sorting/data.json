@@ -2,7 +2,8 @@
   "customOrder": {
     "/": {
       "children": [
-        "DayPlan",
+        "Excalidraw",
+        "__IMPORT_FILES__file-20260514171100247.md",
         "DataCollection",
         "DB",
         "os",
@@ -21,21 +22,15 @@
       ],
       "sortOrder": "custom"
     },
-    "DayPlan": {
-      "children": [
-        "DayPlan/2026-05-05.md",
-        "DayPlan/2026-04-18.md",
-        "DayPlan/2026-04-19.md",
-        "DayPlan/2026-04-20.md",
-        "DayPlan/2026-04-21.md"
-      ],
-      "sortOrder": "custom"
-    },
     "DB": {
       "children": [
         "DB/存储过程、触发器和数据完整性.md",
         "DB/结构化查询语言SQL.md"
       ],
+      "sortOrder": "custom"
+    },
+    "Excalidraw": {
+      "children": [],
       "sortOrder": "custom"
     },
     "os": {
