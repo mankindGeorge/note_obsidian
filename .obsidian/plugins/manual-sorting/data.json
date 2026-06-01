@@ -2,13 +2,11 @@
   "customOrder": {
     "/": {
       "children": [
-        "RegressionAnalysis",
         "稿子.md",
-        "Excalidraw",
-        "__IMPORT_FILES__file-20260514171100247.md",
+        "DayPlan",
+        "RegressionAnalysis",
         "DataCollection",
         "DB",
-        "结构化查询语言SQL.md",
         "os",
         "templates",
         "README.md",
@@ -25,14 +23,21 @@
       ],
       "sortOrder": "custom"
     },
-    "DB": {
+    "DayPlan": {
       "children": [
-        "DB/存储过程、触发器和数据完整性.md"
+        "DayPlan/2026-04-18.md",
+        "DayPlan/2026-04-19.md",
+        "DayPlan/2026-04-20.md",
+        "DayPlan/2026-04-21.md",
+        "DayPlan/2026-05-05.md"
       ],
       "sortOrder": "custom"
     },
-    "Excalidraw": {
-      "children": [],
+    "DB": {
+      "children": [
+        "DB/结构化查询语言SQL.md",
+        "DB/存储过程、触发器和数据完整性.md"
+      ],
       "sortOrder": "custom"
     },
     "os": {

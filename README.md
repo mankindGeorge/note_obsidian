@@ -17,7 +17,7 @@ This is my obsidian github repo
 
 | 笔记 | 描述 |
 |------|------|
-| [结构化查询语言SQL](结构化查询语言SQL.md) | 嵌套查询、EXISTS子查询、集合查询 |
+| [结构化查询语言SQL](DB/结构化查询语言SQL.md) | 嵌套查询、EXISTS子查询、集合查询 |
 
 ### OS - 操作系统
 
