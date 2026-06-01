@@ -68,6 +68,12 @@
       ],
       "sortOrder": "custom"
     },
+    "RegressionAnalysis": {
+      "children": [
+        "RegressionAnalysis/应用回归分析期末复习.md"
+      ],
+      "sortOrder": "custom"
+    },
     "templates": {
       "children": [
         "templates/os模板.md",
