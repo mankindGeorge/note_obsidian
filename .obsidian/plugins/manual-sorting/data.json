@@ -2,6 +2,7 @@
   "customOrder": {
     "/": {
       "children": [
+        "稿子.md",
         "DayPlan",
         "RegressionAnalysis",
         "DataCollection",
