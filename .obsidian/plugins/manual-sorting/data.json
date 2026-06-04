@@ -2,6 +2,8 @@
   "customOrder": {
     "/": {
       "children": [
+        "提示词.md",
+        "方案.md",
         "稿子.md",
         "DayPlan",
         "RegressionAnalysis",
