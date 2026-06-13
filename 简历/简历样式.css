@@ -1,0 +1,280 @@
+@page {
+  size: A4;
+  margin: 0;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: "Microsoft YaHei", "PingFang SC", "Hiragino Sans GB", sans-serif;
+  font-size: 14px;
+  line-height: 1.6;
+  color: #333;
+  background: #f5f5f5;
+}
+
+.resume {
+  width: 210mm;
+  height: 297mm;
+  margin: 0 auto;
+  background: white;
+  box-shadow: 0 0 20px rgba(0,0,0,0.1);
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+  padding-bottom: 15mm;
+}
+
+/* Header Section */
+.header {
+  background: linear-gradient(135deg, #2E75B6 0%, #1a5276 100%);
+  color: white;
+  padding: 15px 40px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.header-info {
+  flex: 1;
+}
+
+.header-info h1 {
+  font-size: 26px;
+  font-weight: bold;
+  margin-bottom: 10px;
+  letter-spacing: 2px;
+}
+
+.info-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 4px 40px;
+  font-size: 12px;
+}
+
+.info-item {
+  display: flex;
+  align-items: center;
+}
+
+.info-label {
+  font-weight: bold;
+  min-width: 70px;
+}
+
+.photo {
+  width: 90px;
+  height: 110px;
+  border: 3px solid white;
+  border-radius: 8px;
+  object-fit: cover;
+  margin-left: 30px;
+}
+
+/* Section Styles */
+.section {
+  padding: 8px 40px;
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+}
+
+.section-content {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+}
+
+.section-header {
+  background: linear-gradient(90deg, #2E75B6 0%, #5499C7 100%);
+  color: white;
+  padding: 5px 20px;
+  margin-bottom: 8px;
+  font-size: 14px;
+  font-weight: bold;
+  border-radius: 4px;
+  display: flex;
+  align-items: center;
+}
+
+.section-header::before {
+  content: "";
+  display: inline-block;
+  width: 4px;
+  height: 16px;
+  background: white;
+  margin-right: 10px;
+  border-radius: 2px;
+}
+
+/* Education Section */
+.education-item {
+  margin-bottom: 0;
+  padding-bottom: 0;
+  border-bottom: none;
+}
+
+.education-item:last-child {
+  border-bottom: none;
+}
+
+.edu-header {
+  position: relative;
+  margin-bottom: 4px;
+  text-align: center;
+}
+
+.edu-date {
+  position: absolute;
+  left: 0;
+  font-weight: bold;
+  color: #2E75B6;
+}
+
+.edu-school {
+  font-weight: bold;
+  font-size: 15px;
+  display: inline-block;
+}
+
+.edu-major {
+  position: absolute;
+  right: 0;
+  color: #666;
+}
+
+.edu-details {
+  font-size: 12px;
+  color: #555;
+  line-height: 1.5;
+}
+
+.edu-details p {
+  margin-bottom: 0;
+}
+
+/* Experience Section */
+.experience-item {
+  margin-bottom: 8px;
+  padding-bottom: 6px;
+  border-bottom: 1px dashed #e0e0e0;
+}
+
+.experience-item:last-child {
+  border-bottom: none;
+  margin-bottom: 0;
+}
+
+.exp-header {
+  position: relative;
+  margin-bottom: 4px;
+  text-align: center;
+}
+
+.exp-date {
+  position: absolute;
+  left: 0;
+  font-weight: bold;
+  color: #2E75B6;
+}
+
+.exp-company {
+  font-weight: bold;
+  font-size: 14px;
+  display: inline-block;
+}
+
+.exp-position {
+  position: absolute;
+  right: 0;
+  color: #666;
+  font-weight: bold;
+}
+
+.exp-content {
+  font-size: 12px;
+  color: #555;
+}
+
+.exp-content ul {
+  list-style: none;
+  padding-left: 0;
+}
+
+.exp-content li {
+  position: relative;
+  padding-left: 12px;
+  margin-bottom: 3px;
+  line-height: 1.4;
+}
+
+.exp-content li::before {
+  content: "•";
+  position: absolute;
+  left: 0;
+  color: #2E75B6;
+  font-weight: bold;
+}
+
+.exp-content strong {
+  color: #333;
+}
+
+/* Skills Section */
+.skills-section {
+  margin-top: auto;
+}
+
+.skills-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 4px 20px;
+}
+
+.skill-category {
+  font-size: 12px;
+  line-height: 1.4;
+}
+
+.skill-category strong {
+  color: #2E75B6;
+}
+
+/* Honors Section */
+.honors-list {
+  font-size: 12px;
+  line-height: 1.4;
+}
+
+.honors-list ul {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 2px 20px;
+  list-style: none;
+  padding: 0;
+}
+
+.honors-list li {
+  margin-bottom: 0;
+}
+
+/* Print Styles */
+@media print {
+  body {
+    background: white;
+  }
+
+  .resume {
+    box-shadow: none;
+    margin: 0;
+    width: 210mm;
+    height: 297mm;
+    padding-bottom: 15mm;
+  }
+}

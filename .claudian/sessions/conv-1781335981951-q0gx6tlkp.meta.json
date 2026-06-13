@@ -1,0 +1,24 @@
+{
+  "id": "conv-1781335981951-q0gx6tlkp",
+  "providerId": "claude",
+  "title": "帮我优化简历板块，[具体内容做的内容]与我投递的[此处填写具体求职岗位，如:新媒体运营、行政助理]岗...",
+  "titleGenerationStatus": "failed",
+  "createdAt": 1781335981951,
+  "updatedAt": 1781337138174,
+  "lastResponseAt": 1781336097097,
+  "sessionId": "6c3ff534-f446-4022-b3e4-3b9e5347cb24",
+  "providerState": {
+    "providerSessionId": "6c3ff534-f446-4022-b3e4-3b9e5347cb24"
+  },
+  "currentNote": "简历.md",
+  "usage": {
+    "model": "haiku",
+    "inputTokens": 0,
+    "cacheCreationInputTokens": 0,
+    "cacheReadInputTokens": 0,
+    "contextWindow": 200000,
+    "contextTokens": 0,
+    "percentage": 0,
+    "contextWindowIsAuthoritative": true
+  }
+}

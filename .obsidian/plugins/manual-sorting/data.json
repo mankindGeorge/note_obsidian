@@ -2,10 +2,9 @@
   "customOrder": {
     "/": {
       "children": [
+        "简历",
+        "简历备份.md",
         "AGENTS.md",
-        "提示词.md",
-        "方案.md",
-        "稿子.md",
         "DayPlan",
         "RegressionAnalysis",
         "DataCollection",
@@ -14,6 +13,53 @@
         "templates",
         "README.md",
         "CLAUDE.md"
+      ],
+      "sortOrder": "custom"
+    },
+    "简历": {
+      "children": [
+        "简历/assets",
+        "简历/Data Analysis Resume - George Jinhong Wu.pdf",
+        "简历/Web Development Resume - George Jinhong Wu.pdf",
+        "简历/AI Industry Resume - George Jinhong Wu.pdf",
+        "简历/AI行业岗位简历_EN.html",
+        "简历/Web前后端岗位简历_EN.html",
+        "简历/数据分析岗位简历_EN.html",
+        "简历/数据分析岗位简历 - 吴锦泓（George）.pdf",
+        "简历/Web前后端岗位简历 - 吴锦泓（George）.pdf",
+        "简历/AI行业岗位简历 - 吴锦泓（George）.pdf",
+        "简历/AI行业岗位简历.html",
+        "简历/Web前后端岗位简历.html",
+        "简历/数据分析岗位简历.html",
+        "简历/简历样式.css",
+        "简历/AI行业岗位简历.docx",
+        "简历/AI行业.md",
+        "简历/AI行业岗位简历_EN.md",
+        "简历/Web前后端.md",
+        "简历/Web前后端岗位简历_EN.md",
+        "简历/数据分析.md",
+        "简历/数据分析岗位简历_EN.md",
+        "简历/通用信息.md",
+        "简历/README.md"
+      ],
+      "sortOrder": "custom"
+    },
+    "简历/assets": {
+      "children": [
+        "简历/assets/通用信息",
+        "简历/assets/AI行业"
+      ],
+      "sortOrder": "custom"
+    },
+    "简历/assets/通用信息": {
+      "children": [
+        "简历/assets/通用信息/file-20260613180719785.png"
+      ],
+      "sortOrder": "custom"
+    },
+    "简历/assets/AI行业": {
+      "children": [
+        "简历/assets/AI行业/file-20260613174800850.png"
       ],
       "sortOrder": "custom"
     },
@@ -28,6 +74,7 @@
     },
     "DayPlan": {
       "children": [
+        "DayPlan/2026-06-13.md",
         "DayPlan/2026-04-18.md",
         "DayPlan/2026-04-19.md",
         "DayPlan/2026-04-20.md",
