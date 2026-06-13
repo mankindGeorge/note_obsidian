@@ -2,6 +2,7 @@
   "customOrder": {
     "/": {
       "children": [
+        "AGENTS.md",
         "提示词.md",
         "方案.md",
         "稿子.md",
