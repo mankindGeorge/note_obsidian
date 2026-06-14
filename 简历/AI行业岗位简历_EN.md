@@ -12,7 +12,7 @@
 ## Education
 
 **GDUFE** | Guangzhou, China
-*Bachelor of Science in Data Science and Big Data Technology (Intelligent Computing)* | Sep 2024 – Present
+*Data Science and Big Data Technology (Intelligent Computing)* | Sep 2024 – Present
 
 - **Relevant Coursework:** Data Structures & Algorithms, Database Systems, Operating Systems, Applied Regression Analysis, Data Governance, Unstructured Data Mining, Algorithm Analysis & Design, Optimization Methods, Data Collection
 

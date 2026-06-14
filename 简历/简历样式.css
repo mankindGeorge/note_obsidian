@@ -64,7 +64,6 @@ body {
 
 .info-label {
   font-weight: bold;
-  min-width: 70px;
 }
 
 .photo {
@@ -159,6 +158,10 @@ body {
   margin-bottom: 0;
 }
 
+.edu-details p strong {
+  color: #2E75B6;
+}
+
 /* Experience Section */
 .experience-item {
   margin-bottom: 8px;
@@ -232,9 +235,9 @@ body {
 }
 
 .skills-grid {
-  display: grid;
-  grid-template-columns: repeat(2, 1fr);
-  gap: 4px 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
 }
 
 .skill-category {
@@ -243,7 +246,7 @@ body {
 }
 
 .skill-category strong {
-  color: #2E75B6;
+  color: #333;
 }
 
 /* Honors Section */
