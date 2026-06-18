@@ -1,7 +1,8 @@
 {
   "permissions": {
     "allow": [
-      "Read(//c/Users/Mankind/Desktop/**)"
+      "Read(//c/Users/Mankind/Desktop/**)",
+      "Bash(notebooklm use *)"
     ]
   }
 }
