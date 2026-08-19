@@ -95,6 +95,9 @@
     },
     "os": {
       "children": [
+        "os/引论_quiz.md",
+        "os/引论_quiz_CN.md",
+        "os/引论_quiz_CN_v2.md",
         "os/assets",
         "os/重点ai总结（录音）.md",
         "os/引论.md",
