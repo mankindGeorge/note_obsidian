@@ -13,7 +13,59 @@
         "os",
         "templates",
         "README.md",
-        "CLAUDE.md"
+        "CLAUDE.md",
+        "AGENTS.md"
+      ],
+      "sortOrder": "custom"
+    },
+    "简历": {
+      "children": [
+        "简历/assets",
+        "简历/简历备份.md",
+        "简历/数据分析岗位简历 - 吴锦泓.pdf",
+        "简历/Web前后端岗位简历 - 吴锦泓.pdf",
+        "简历/AI行业岗位简历 - 吴锦泓.pdf",
+        "简历/Data Analysis Resume - George Jinhong Wu.pdf",
+        "简历/Web Development Resume - George Jinhong Wu.pdf",
+        "简历/AI Industry Resume - George Jinhong Wu.pdf",
+        "简历/AI行业岗位简历_EN.html",
+        "简历/Web前后端岗位简历_EN.html",
+        "简历/数据分析岗位简历_EN.html",
+        "简历/数据分析岗位简历 - 吴锦泓（George）.pdf",
+        "简历/Web前后端岗位简历 - 吴锦泓（George）.pdf",
+        "简历/AI行业岗位简历 - 吴锦泓（George）.pdf",
+        "简历/AI行业岗位简历.html",
+        "简历/Web前后端岗位简历.html",
+        "简历/数据分析岗位简历.html",
+        "简历/简历样式.css",
+        "简历/AI行业岗位简历.docx",
+        "简历/AI行业.md",
+        "简历/AI行业岗位简历_EN.md",
+        "简历/Web前后端.md",
+        "简历/Web前后端岗位简历_EN.md",
+        "简历/数据分析.md",
+        "简历/数据分析岗位简历_EN.md",
+        "简历/通用信息.md",
+        "简历/README.md"
+      ],
+      "sortOrder": "custom"
+    },
+    "简历/assets": {
+      "children": [
+        "简历/assets/通用信息",
+        "简历/assets/AI行业"
+      ],
+      "sortOrder": "custom"
+    },
+    "简历/assets/通用信息": {
+      "children": [
+        "简历/assets/通用信息/file-20260613180719785.png"
+      ],
+      "sortOrder": "custom"
+    },
+    "简历/assets/AI行业": {
+      "children": [
+        "简历/assets/AI行业/file-20260613174800850.png"
       ],
       "sortOrder": "custom"
     },
@@ -40,13 +92,16 @@
     },
     "DB": {
       "children": [
-        "DB/存储过程、触发器和数据完整性.md",
-        "DB/结构化查询语言SQL.md"
+        "DB/结构化查询语言SQL.md",
+        "DB/存储过程、触发器和数据完整性.md"
       ],
       "sortOrder": "custom"
     },
     "os": {
       "children": [
+        "os/引论_quiz.md",
+        "os/引论_quiz_CN.md",
+        "os/引论_quiz_CN_v2.md",
         "os/assets",
         "os/重点ai总结（录音）.md",
         "os/引论.md",
