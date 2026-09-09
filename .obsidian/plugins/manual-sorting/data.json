@@ -2,8 +2,8 @@
   "customOrder": {
     "/": {
       "children": [
+        "大数据分析与决策",
         "简历",
-        "DayPlan",
         "最优化命令",
         "数据治理",
         "RegressionAnalysis",
@@ -14,6 +14,12 @@
         "README.md",
         "CLAUDE.md",
         "AGENTS.md"
+      ],
+      "sortOrder": "custom"
+    },
+    "大数据分析与决策": {
+      "children": [
+        "大数据分析与决策/未命名.md"
       ],
       "sortOrder": "custom"
     },
@@ -90,17 +96,6 @@
       ],
       "sortOrder": "custom"
     },
-    "DayPlan": {
-      "children": [
-        "DayPlan/2026-04-18.md",
-        "DayPlan/2026-04-19.md",
-        "DayPlan/2026-04-20.md",
-        "DayPlan/2026-04-21.md",
-        "DayPlan/2026-05-05.md",
-        "DayPlan/2026-06-13.md"
-      ],
-      "sortOrder": "custom"
-    },
     "DB": {
       "children": [
         "DB/结构化查询语言SQL.md",
@@ -154,7 +149,7 @@
     },
     "templates": {
       "children": [
-        "templates/模板.md",
+        "templates/笔记模板.md",
         "templates/xxxx-xx-xx.md"
       ],
       "sortOrder": "custom"
