@@ -2,7 +2,11 @@
   "customOrder": {
     "/": {
       "children": [
-        "DayPlan",
+        "未命名.base",
+        "未命名.canvas",
+        "未命名 1.base",
+        "最优化方法",
+        "数据治理",
         "RegressionAnalysis",
         "DataCollection",
         "DB",
@@ -13,22 +17,24 @@
       ],
       "sortOrder": "custom"
     },
+    "数据治理": {
+      "children": [
+        "数据治理/数据治理导言.md"
+      ],
+      "sortOrder": "custom"
+    },
+    "最优化方法": {
+      "children": [
+        "最优化方法/chapter 1.md"
+      ],
+      "sortOrder": "custom"
+    },
     "DataCollection": {
       "children": [
         "DataCollection/Scrapy.md",
         "DataCollection/网络爬虫.md",
         "DataCollection/BeautifulSoup.md",
         "DataCollection/Web服务器搭建与网页解析.md"
-      ],
-      "sortOrder": "custom"
-    },
-    "DayPlan": {
-      "children": [
-        "DayPlan/2026-05-05.md",
-        "DayPlan/2026-04-18.md",
-        "DayPlan/2026-04-19.md",
-        "DayPlan/2026-04-20.md",
-        "DayPlan/2026-04-21.md"
       ],
       "sortOrder": "custom"
     },
@@ -82,7 +88,7 @@
     },
     "templates": {
       "children": [
-        "templates/os模板.md",
+        "templates/模板.md",
         "templates/xxxx-xx-xx.md"
       ],
       "sortOrder": "custom"
