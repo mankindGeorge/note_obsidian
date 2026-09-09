@@ -2,10 +2,9 @@
   "customOrder": {
     "/": {
       "children": [
-        "未命名.base",
-        "未命名.canvas",
-        "未命名 1.base",
-        "最优化方法",
+        "简历",
+        "DayPlan",
+        "最优化命令",
         "数据治理",
         "RegressionAnalysis",
         "DataCollection",
@@ -75,9 +74,10 @@
       ],
       "sortOrder": "custom"
     },
-    "最优化方法": {
+    "最优化命令": {
       "children": [
-        "最优化方法/chapter 1.md"
+        "最优化命令/最优化方法导论与大模型底层逻辑.md",
+        "最优化命令/优化理论课程导论与数学建模基础.md"
       ],
       "sortOrder": "custom"
     },
@@ -87,6 +87,17 @@
         "DataCollection/网络爬虫.md",
         "DataCollection/BeautifulSoup.md",
         "DataCollection/Web服务器搭建与网页解析.md"
+      ],
+      "sortOrder": "custom"
+    },
+    "DayPlan": {
+      "children": [
+        "DayPlan/2026-04-18.md",
+        "DayPlan/2026-04-19.md",
+        "DayPlan/2026-04-20.md",
+        "DayPlan/2026-04-21.md",
+        "DayPlan/2026-05-05.md",
+        "DayPlan/2026-06-13.md"
       ],
       "sortOrder": "custom"
     },
